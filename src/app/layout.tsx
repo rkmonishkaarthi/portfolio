@@ -5,7 +5,6 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
-import { StarsCanvas } from '@/components/starry-background';
 
 export const metadata: Metadata = {
   title: 'PortfolioFlow | Your Name',
@@ -33,7 +32,6 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <div className="relative z-0 flex min-h-screen flex-col bg-background">
-            <StarsCanvas />
             <Header />
             <main className="container flex-grow px-4 sm:px-6 lg:px-8 py-16">
               {children}
