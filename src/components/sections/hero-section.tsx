@@ -12,7 +12,7 @@ export default function HeroSection() {
           Hi There! <span className="animate-wave">👋</span>
         </h1>
         <h2 className="text-5xl md:text-7xl font-bold">
-          I&apos;M <span className="text-primary">Soumyajit Behera</span>
+          I&apos;M <span className="text-primary">Monish Kaarthi R K</span>
         </h2>
         <h3 className="text-4xl md:text-6xl font-bold text-primary">
           <AnimatedText />

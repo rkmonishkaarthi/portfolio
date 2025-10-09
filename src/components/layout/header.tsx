@@ -8,6 +8,7 @@ import { cn } from '@/lib/utils';
 import { useActiveSection } from '@/hooks/use-active-section';
 import { motion } from 'framer-motion';
 import { ThemeToggle } from '../theme-toggle';
+import { Code2 } from 'lucide-react';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,7 +35,7 @@ export function Header() {
     <header className={cn("sticky top-0 z-50 w-full transition-shadow duration-300", isScrolled ? "shadow-md bg-background/80 backdrop-blur-sm" : "shadow-none")}>
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-3xl font-bold purple-text-gradient">Soumyajit.</span>
+          <Code2 className="h-8 w-8 text-primary" />
         </Link>
         <div className="flex items-center gap-4">
           <nav className="hidden md:flex md:items-center md:space-x-6 text-lg">

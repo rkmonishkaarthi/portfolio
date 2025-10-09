@@ -7,7 +7,7 @@ import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 
 export const metadata: Metadata = {
-  title: 'PortfolioFlow | Your Name',
+  title: 'PortfolioFlow | Monish Kaarthi R K',
   description: 'A personal portfolio website built with Next.js and Firebase.',
   keywords: ['React', 'Next.js', 'Firebase', 'Portfolio', 'Developer'],
 };
