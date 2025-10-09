@@ -64,11 +64,6 @@ export const socialLinks: SocialLink[] = [
     icon: Linkedin,
   },
   {
-    name: 'Twitter',
-    url: 'https://twitter.com',
-    icon: Twitter,
-  },
-  {
     name: 'GitHub',
     url: 'https://github.com',
     icon: Github,
