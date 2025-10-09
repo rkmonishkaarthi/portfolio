@@ -14,7 +14,7 @@ export default function HeroSection() {
         <h2 className="text-5xl md:text-7xl font-bold">
           I&apos;M <span className="text-primary">Monish Kaarthi R K</span>
         </h2>
-        <h3 className="text-4xl md:text-6xl font-bold text-primary">
+        <h3 className="text-4xl md:text-6xl font-bold">
           <AnimatedText />
         </h3>
       </div>
