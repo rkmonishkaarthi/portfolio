@@ -1,3 +1,40 @@
 {
-  "placeholderImages": []
+  "placeholderImages": [
+    {
+      "id": "project-1",
+      "description": "A placeholder image for a web application project.",
+      "imageUrl": "https://picsum.photos/seed/p1/600/400",
+      "imageHint": "web app"
+    },
+    {
+      "id": "project-2",
+      "description": "A placeholder image for a mobile app project.",
+      "imageUrl": "https://picsum.photos/seed/p2/600/400",
+      "imageHint": "mobile app"
+    },
+    {
+      "id": "project-3",
+      "description": "A placeholder image for a data visualization dashboard.",
+      "imageUrl": "https://picsum.photos/seed/p3/600/400",
+      "imageHint": "data dashboard"
+    },
+    {
+      "id": "project-4",
+      "description": "A placeholder for a branding project.",
+      "imageUrl": "https://picsum.photos/seed/p4/600/400",
+      "imageHint": "branding design"
+    },
+    {
+      "id": "project-5",
+      "description": "A placeholder for a portfolio website.",
+      "imageUrl": "https://picsum.photos/seed/p5/600/400",
+      "imageHint": "portfolio website"
+    },
+    {
+      "id": "project-6",
+      "description": "A placeholder for a machine learning model visualization.",
+      "imageUrl": "https://picsum.photos/seed/p6/600/400",
+      "imageHint": "machine learning"
+    }
+  ]
 }
