@@ -24,11 +24,11 @@ export function AnimatedText({ roles = defaultRoles }: AnimatedTextProps) {
   }, []);
 
   if (!isMounted) {
-    return <span className="text-primary">{roles[0]}</span>;
+    return <span className="purple-text-gradient">{roles[0]}</span>;
   }
 
   return (
-    <span className="text-primary">
+    <span className="purple-text-gradient">
       <Typewriter
         options={{
           strings: roles,

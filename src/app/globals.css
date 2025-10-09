@@ -9,6 +9,11 @@
   -webkit-text-fill-color: transparent;
 }
 
+.Typewriter__cursor {
+  color: #c084fc;
+  font-weight: 300;
+}
+
 
 @layer base {
   html {
