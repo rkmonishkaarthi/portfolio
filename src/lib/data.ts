@@ -13,14 +13,19 @@ import {
   LayoutTemplate,
   BrainCircuit,
   FileText,
-  Home
+  Home,
+  User,
+  Lightbulb,
+  Briefcase,
+  Twitter,
+  Instagram,
 } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
   { name: 'Home', hash: '#home', icon: Home },
-  { name: 'About', hash: '#about', icon: BrainCircuit },
-  { name: 'Projects', hash: '#projects', icon: CodeXml },
-  { name: 'Resume', hash: '#resume', icon: FileText },
+  { name: 'About', hash: '#about', icon: User },
+  { name: 'Skills', hash: '#skills', icon: Lightbulb },
+  { name: 'Projects', hash: '#projects', icon: Briefcase },
   { name: 'Contact', hash: '#contact', icon: Mail },
 ];
 
@@ -32,7 +37,6 @@ export const skills: Skill[] = [
   { name: 'Tailwind CSS', icon: Wind },
   { name: 'Figma', icon: Figma },
   { name: 'Git', icon: GitFork },
-  { name: 'React Native', icon: Smartphone },
   { name: 'Firebase', icon: BrainCircuit },
 ];
 
@@ -48,9 +52,14 @@ export const socialLinks: SocialLink[] = [
     icon: Linkedin,
   },
   {
-    name: 'Email',
-    url: 'mailto:youremail@example.com',
-    icon: Mail,
+    name: 'Twitter',
+    url: 'https://twitter.com',
+    icon: Twitter,
+  },
+  {
+    name: 'Instagram',
+    url: 'https://instagram.com',
+    icon: Instagram,
   },
 ];
 
@@ -60,7 +69,7 @@ export const mockProjects: Project[] = [
       title: 'E-commerce Platform',
       description: 'A full-featured e-commerce platform with a modern UI and a robust backend.',
       tags: ['React', 'Next.js', 'Stripe'],
-      imageUrl: 'https://soumyajit.vercel.app/static/media/carrent.246a4804.png',
+      imageUrl: 'https://picsum.photos/seed/proj1/600/400',
       imageHint: 'web app',
       githubUrl: 'https://github.com',
       liveUrl: '#',
@@ -71,7 +80,7 @@ export const mockProjects: Project[] = [
       title: 'Task Management App',
       description: 'A productivity app to help users organize their tasks and stay on track.',
       tags: ['React Native', 'Firebase'],
-      imageUrl: 'https://soumyajit.vercel.app/static/media/jobit.02a3c206.png',
+      imageUrl: 'https://picsum.photos/seed/proj2/600/400',
       imageHint: 'mobile app',
       githubUrl: 'https://github.com',
       liveUrl: '#',
@@ -82,7 +91,7 @@ export const mockProjects: Project[] = [
       title: 'Portfolio Website',
       description: 'A personal portfolio to showcase my projects and skills.',
       tags: ['Next.js', 'Tailwind CSS', 'Framer Motion'],
-      imageUrl: 'https://soumyajit.vercel.app/static/media/tripguide.2f096242.png',
+      imageUrl: 'https://picsum.photos/seed/proj3/600/400',
       imageHint: 'portfolio website',
       githubUrl: 'https://github.com',
       liveUrl: '#',
