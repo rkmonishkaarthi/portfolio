@@ -1,55 +1,40 @@
 "use client";
 
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Project } from '@/lib/types';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { Github, ExternalLink } from 'lucide-react';
+import { ArrowUpRight, Github } from 'lucide-react';
+import { Badge } from './ui/badge';
 
 type ProjectCardProps = {
   project: Project;
+  index: number;
 };
 
-export function ProjectCard({ project }: ProjectCardProps) {
+export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden h-full bg-card/80 backdrop-blur-sm border-border/60 p-5 rounded-2xl group">
-      <div className="relative w-full h-56 overflow-hidden rounded-lg">
-        <Image
-          src={project.imageUrl}
-          alt={project.title}
-          fill
-          className="object-cover rounded-lg transform transition-transform duration-500 group-hover:scale-110"
-          data-ai-hint={project.imageHint || "project"}
-        />
-      </div>
-
-      <CardContent className="mt-5 flex-grow p-0">
-        <h3 className="font-bold text-2xl text-primary">{project.title}</h3>
-        <p className="mt-2 text-muted-foreground text-sm">{project.description}</p>
+    <Card className="flex flex-col overflow-hidden h-full bg-card/80 backdrop-blur-sm border-border/60 p-6 rounded-2xl group relative">
+      <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="absolute top-6 right-6">
+        <Button variant="ghost" size="icon" className="bg-secondary hover:bg-secondary/80 rounded-full h-12 w-12 transform transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
+          <ArrowUpRight className="h-6 w-6 text-foreground/80" />
+        </Button>
+      </Link>
+      
+      <CardContent className="flex-grow p-0">
+        <div className="text-primary font-bold text-lg mb-2">
+          {String(index + 1).padStart(2, '0')}
+        </div>
+        <h3 className="font-bold text-2xl text-foreground mb-3">{project.title}</h3>
+        <p className="text-muted-foreground text-sm leading-relaxed">{project.description}</p>
       </CardContent>
       
-      <div className="mt-4 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         {project.tags.map((tag) => (
-          <p key={tag} className="text-sm font-medium text-primary/80">
-            #{tag}
-          </p>
+          <Badge key={tag} variant="secondary" className="font-normal">
+            {tag}
+          </Badge>
         ))}
-      </div>
-
-      <div className="mt-5 flex items-center gap-4">
-        <Button asChild variant="outline">
-          <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-            <Github className="mr-2"/> GitHub
-          </Link>
-        </Button>
-        {project.liveUrl && (
-          <Button asChild>
-            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="mr-2"/> Live Demo
-            </Link>
-          </Button>
-        )}
       </div>
     </Card>
   );
