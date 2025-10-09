@@ -7,6 +7,7 @@ import { navLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useActiveSection } from '@/hooks/use-active-section';
 import { motion } from 'framer-motion';
+import { ThemeToggle } from '../theme-toggle';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -57,6 +58,8 @@ export function Header() {
               </Link>
             ))}
           </nav>
+
+          <ThemeToggle />
           
           <div className="md:hidden">
             <button
