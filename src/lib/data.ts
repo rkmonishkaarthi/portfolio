@@ -21,12 +21,9 @@ import {
 } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
-  { name: 'Home', hash: '#home', icon: Home },
   { name: 'About', hash: '#about', icon: User },
-  { name: 'Skills', hash: '#skills', icon: Lightbulb },
   { name: 'Projects', hash: '#projects', icon: Briefcase },
   { name: 'Contact', hash: '#contact', icon: Mail },
-  { name: 'Resume', hash: '#resume', icon: Download },
 ];
 
 export const skills: Skill[] = [
@@ -42,13 +39,13 @@ export const skills: Skill[] = [
 
 export const socialLinks: SocialLink[] = [
   {
-    name: 'GitHub',
-    url: 'https://github.com',
-    icon: Github,
+    name: 'Email',
+    url: 'mailto:example@gmail.com',
+    icon: Mail,
   },
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com',
+    url: 'https://linkedin.com/in/',
     icon: Linkedin,
   },
   {
@@ -57,9 +54,9 @@ export const socialLinks: SocialLink[] = [
     icon: Twitter,
   },
   {
-    name: 'Instagram',
-    url: 'https://instagram.com',
-    icon: Instagram,
+    name: 'GitHub',
+    url: 'https://github.com',
+    icon: Github,
   },
 ];
 

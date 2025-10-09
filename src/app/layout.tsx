@@ -27,11 +27,11 @@ export default function RootLayout({
       <body className={cn('font-body antialiased')}>
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative z-0 flex min-h-screen flex-col bg-background bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
+          <div className="relative z-0 flex min-h-screen flex-col bg-background">
             <Header />
             <main className="container flex-grow px-4 sm:px-6 lg:px-8 py-16">
               {children}
