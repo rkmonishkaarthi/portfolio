@@ -28,7 +28,7 @@ export default function RootLayout({
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
-          enableSystem={false}
+          enableSystem
           disableTransitionOnChange
         >
           <div className="relative z-0 flex min-h-screen flex-col bg-background">

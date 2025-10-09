@@ -6,6 +6,7 @@ import { useState, useEffect } from 'react';
 import { navLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useActiveSection } from '@/hooks/use-active-section';
+import { ThemeToggle } from '../theme-toggle';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -51,6 +52,7 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
+             <ThemeToggle />
             <button
               className="md:hidden p-2"
               onClick={toggleMenu}
