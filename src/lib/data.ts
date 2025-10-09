@@ -31,16 +31,20 @@ export const navLinks: NavLink[] = [
   { name: 'Resume', hash: '#resume', icon: FileText },
 ];
 
-export const skills: Skill[] = [
+export const professionalSkills: Skill[] = [
   { name: 'React', icon: CodeXml },
   { name: 'Next.js', icon: LayoutTemplate },
   { name: 'Node.js', icon: Server },
   { name: 'MongoDB', icon: Database },
-  { name: 'Tailwind CSS', icon: Wind },
-  { name: 'Figma', icon: Figma },
-  { name: 'Git', icon: GitFork },
   { name: 'Firebase', icon: BrainCircuit },
+  { name: 'Tailwind CSS', icon: Wind },
 ];
+
+export const tools: Skill[] = [
+  { name: 'Git', icon: GitFork },
+  { name: 'Figma', icon: Figma },
+];
+
 
 export const socialLinks: SocialLink[] = [
   {
