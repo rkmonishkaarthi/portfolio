@@ -21,6 +21,13 @@ import {
   Send,
   FileText,
 } from 'lucide-react';
+import { CIcon } from '@/components/icons/c-icon';
+import { JavaIcon } from '@/components/icons/java-icon';
+import { JavascriptIcon } from '@/components/icons/javascript-icon';
+import { MysqlIcon } from '@/components/icons/mysql-icon';
+import { PostmanIcon } from '@/components/icons/postman-icon';
+import { VscodeIcon } from '@/components/icons/vscode-icon';
+import { VercelIcon } from '@/components/icons/vercel-icon';
 
 export const navLinks: NavLink[] = [
   { name: 'Home', hash: '#home', icon: Home },
@@ -32,9 +39,12 @@ export const navLinks: NavLink[] = [
 ];
 
 export const professionalSkills: Skill[] = [
+  { name: 'C', icon: CIcon },
+  { name: 'Java', icon: JavaIcon },
+  { name: 'JavaScript', icon: JavascriptIcon },
   { name: 'React', icon: CodeXml },
-  { name: 'Next.js', icon: LayoutTemplate },
   { name: 'Node.js', icon: Server },
+  { name: 'MySQL', icon: MysqlIcon },
   { name: 'MongoDB', icon: Database },
   { name: 'Firebase', icon: BrainCircuit },
   { name: 'Tailwind CSS', icon: Wind },
@@ -43,6 +53,9 @@ export const professionalSkills: Skill[] = [
 export const tools: Skill[] = [
   { name: 'Git', icon: GitFork },
   { name: 'Figma', icon: Figma },
+  { name: 'Visual Studio Code', icon: VscodeIcon },
+  { name: 'Postman', icon: PostmanIcon },
+  { name: 'Vercel', icon: VercelIcon },
 ];
 
 
