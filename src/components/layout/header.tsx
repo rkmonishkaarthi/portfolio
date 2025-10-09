@@ -43,10 +43,11 @@ export function Header() {
                 key={link.name}
                 href={link.hash}
                 className={cn(
-                  'font-medium transition-colors hover:text-primary',
+                  'flex items-center gap-2 font-medium transition-colors hover:text-primary',
                   activeSection === link.hash ? 'text-primary' : 'text-foreground/80'
                 )}
               >
+                <link.icon className="h-5 w-5" />
                 {link.name}
               </Link>
             ))}
@@ -72,10 +73,11 @@ export function Header() {
                 href={link.hash}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  'text-xl font-medium transition-colors hover:text-primary',
+                  'flex items-center gap-2 text-xl font-medium transition-colors hover:text-primary',
                   activeSection === link.hash ? 'text-primary' : 'text-foreground/80'
                 )}
               >
+                <link.icon className="h-5 w-5" />
                 {link.name}
               </Link>
             ))}
