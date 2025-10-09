@@ -9,25 +9,18 @@ import {
   Wind,
   Figma,
   GitFork,
-  LayoutTemplate,
   BrainCircuit,
   Home,
   User,
   Lightbulb,
   Briefcase,
   Twitter,
-  Instagram,
-  Download,
-  Send,
   FileText,
+  Send,
+  TerminalSquare,
+  Webhook,
+  Triangle,
 } from 'lucide-react';
-import { CIcon } from '@/components/icons/c-icon';
-import { JavaIcon } from '@/components/icons/java-icon';
-import { JavascriptIcon } from '@/components/icons/javascript-icon';
-import { MysqlIcon } from '@/components/icons/mysql-icon';
-import { PostmanIcon } from '@/components/icons/postman-icon';
-import { VscodeIcon } from '@/components/icons/vscode-icon';
-import { VercelIcon } from '@/components/icons/vercel-icon';
 
 export const navLinks: NavLink[] = [
   { name: 'Home', hash: '#home', icon: Home },
@@ -39,12 +32,12 @@ export const navLinks: NavLink[] = [
 ];
 
 export const professionalSkills: Skill[] = [
-  { name: 'C', icon: CIcon },
-  { name: 'Java', icon: JavaIcon },
-  { name: 'JavaScript', icon: JavascriptIcon },
+  { name: 'C', icon: CodeXml },
+  { name: 'Java', icon: CodeXml },
+  { name: 'JavaScript', icon: CodeXml },
   { name: 'React', icon: CodeXml },
   { name: 'Node.js', icon: Server },
-  { name: 'MySQL', icon: MysqlIcon },
+  { name: 'MySQL', icon: Database },
   { name: 'MongoDB', icon: Database },
   { name: 'Firebase', icon: BrainCircuit },
   { name: 'Tailwind CSS', icon: Wind },
@@ -53,9 +46,9 @@ export const professionalSkills: Skill[] = [
 export const tools: Skill[] = [
   { name: 'Git', icon: GitFork },
   { name: 'Figma', icon: Figma },
-  { name: 'Visual Studio Code', icon: VscodeIcon },
-  { name: 'Postman', icon: PostmanIcon },
-  { name: 'Vercel', icon: VercelIcon },
+  { name: 'Visual Studio Code', icon: TerminalSquare },
+  { name: 'Postman', icon: Webhook },
+  { name: 'Vercel', icon: Triangle },
 ];
 
 
