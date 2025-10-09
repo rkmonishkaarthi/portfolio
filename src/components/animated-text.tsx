@@ -5,14 +5,18 @@ import dynamic from 'next/dynamic';
 
 const Typewriter = dynamic(() => import('react-typewriter-effect'), { ssr: false });
 
-const roles = [
+const defaultRoles = [
   "Full Stack Developer",
   "MERN Stack Developer",
   "Front-end Developer",
   "React Developer",
 ];
 
-export function AnimatedText() {
+type AnimatedTextProps = {
+  roles?: string[];
+};
+
+export function AnimatedText({ roles = defaultRoles }: AnimatedTextProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {

@@ -1,6 +1,4 @@
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import { Github, Linkedin, Twitter, Instagram } from 'lucide-react';
 import { AnimatedText } from '@/components/animated-text';
 import { MotionWrapper } from '@/components/motion-wrapper';
 import Link from 'next/link';
@@ -12,14 +10,16 @@ export default function HeroSection() {
       id="home"
       className="min-h-[calc(100vh-5rem)] flex items-center"
     >
-      <div className="grid md:grid-cols-2 gap-12 items-center">
-        <div className="flex flex-col gap-4">
+      <div className="grid md:grid-cols-1 gap-12 items-center">
+        <div className="flex flex-col gap-4 text-center items-center">
           <h3 className="text-3xl font-bold">Hello, It's Me</h3>
-          <h1 className="text-5xl font-bold">Soumyajit Behera</h1>
+          <h1 className="text-5xl font-bold">
+            <AnimatedText roles={['Soumyajit Behera']} />
+          </h1>
           <h3 className="text-3xl font-bold">
             And I'm a <AnimatedText />
           </h3>
-          <p className="text-muted-foreground">
+          <p className="text-muted-foreground max-w-2xl">
             I'm a skilled software developer with experience in TypeScript and
             JavaScript, and expertise in frameworks like React, Node.js, and
             Next.js. 
@@ -43,18 +43,6 @@ export default function HeroSection() {
               Download CV
             </a>
           </Button>
-        </div>
-
-         <div className="relative w-full h-80 md:h-96 flex justify-center items-center">
-          <div className="w-full h-full rounded-full overflow-hidden shadow-[0_0_100px_-15px_hsl(var(--primary))]">
-            <Image 
-              src="https://picsum.photos/seed/avatar/600/600" 
-              alt="Soumyajit Behera" 
-              fill
-              className="object-cover"
-              data-ai-hint="professional man"
-            />
-          </div>
         </div>
       </div>
     </MotionWrapper>
