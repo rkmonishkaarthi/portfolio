@@ -29,7 +29,7 @@ export default async function ProjectsSection() {
     <MotionWrapper id="projects">
       <div className="text-center mb-12">
         <h2 className="font-bold text-4xl">
-          Latest <span className="text-primary">Projects</span>
+          My Recent <span className="text-primary">Works</span>
         </h2>
       </div>
       
