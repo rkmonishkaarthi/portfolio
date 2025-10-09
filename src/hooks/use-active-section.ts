@@ -1,10 +1,9 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import type { NavLink } from '@/lib/types';
 
-export function useActiveSection(navLinks: NavLink[], threshold = 0.3) {
-  const [activeSection, setActiveSection] = useState<string>(navLinks[0]?.hash || '');
+export function useActiveSection(hashes: string[], threshold = 0.3) {
+  const [activeSection, setActiveSection] = useState<string>(hashes[0] || '');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -18,7 +17,7 @@ export function useActiveSection(navLinks: NavLink[], threshold = 0.3) {
       { rootMargin: '-20% 0px -70% 0px', threshold }
     );
 
-    const sections = navLinks.map(({ hash }) => document.querySelector(hash));
+    const sections = hashes.map((hash) => document.querySelector(hash));
     
     sections.forEach((section) => {
       if (section) {
@@ -33,7 +32,7 @@ export function useActiveSection(navLinks: NavLink[], threshold = 0.3) {
         }
       });
     };
-  }, [navLinks, threshold]);
+  }, [hashes, threshold]);
 
   return activeSection;
 }

@@ -7,9 +7,17 @@ import { mockProjects } from '@/lib/data';
 
 async function getProjects(): Promise<Project[]> {
   try {
+    // In a real app, you would fetch from Firestore like this:
+    // const projectsCol = collection(db, 'projects');
+    // const q = query(projectsCol, orderBy('order'));
+    // const projectsSnapshot = await getDocs(q);
+    // return projectsSnapshot.docs.map(doc => ({ id: doc.id, ...doc.data() } as Project));
+    
+    // For now, we'll use mock data.
     return mockProjects;
   } catch (error) {
     console.error("Error fetching projects:", error);
+    // Fallback to mock data if Firestore fetch fails
     return mockProjects;
   }
 }

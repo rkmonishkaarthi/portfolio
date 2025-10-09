@@ -1,5 +1,4 @@
 import { MotionWrapper } from '@/components/motion-wrapper';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { ContactForm } from '@/components/contact-form';
 
 export default function ContactSection() {
