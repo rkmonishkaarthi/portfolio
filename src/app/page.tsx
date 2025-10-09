@@ -10,7 +10,6 @@ export default function Home() {
     <div className="flex flex-col space-y-24">
       <HeroSection />
       <AboutSection />
-      <SkillsSection />
       <ProjectsSection />
       <ResumeSection />
       <ContactSection />
