@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Menu, X, Code2 } from 'lucide-react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { navLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useActiveSection } from '@/hooks/use-active-section';
@@ -16,7 +16,7 @@ export function Header() {
     setIsOpen(!isOpen);
   };
   
-  useState(() => {
+  useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 10) {
         setIsScrolled(true);
@@ -26,7 +26,7 @@ export function Header() {
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  });
+  }, []);
 
   return (
     <header className={cn("sticky top-0 z-50 w-full transition-colors duration-300", isScrolled ? "bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60" : "bg-transparent")}>

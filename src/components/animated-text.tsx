@@ -1,6 +1,9 @@
 "use client";
 
-import Typewriter from 'react-typewriter-effect';
+import { useState, useEffect } from 'react';
+import dynamic from 'next/dynamic';
+
+const Typewriter = dynamic(() => import('react-typewriter-effect'), { ssr: false });
 
 const roles = [
   "Full Stack Developer",
@@ -10,6 +13,16 @@ const roles = [
 ];
 
 export function AnimatedText() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <span className="text-primary">{roles[0]}</span>;
+  }
+
   return (
     <span className="text-primary">
       <Typewriter
