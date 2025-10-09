@@ -28,21 +28,22 @@ export function Header() {
     <header className={cn("sticky top-0 z-50 w-full transition-shadow duration-300", isScrolled ? "shadow-md bg-background/80 backdrop-blur-sm" : "shadow-none")}>
       <div className="container flex h-20 items-center justify-end">
         <div className="flex items-center gap-4">
-          <nav className="flex items-center space-x-8 text-md">
+          <nav className="hidden md:flex items-center space-x-6 text-md">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.hash}
                 className={cn(
-                  'relative font-medium transition-colors hover:text-primary',
-                  activeSection === link.hash ? 'text-primary' : 'text-foreground/80'
+                  'relative flex items-center gap-2 font-medium transition-colors hover:text-primary',
+                  activeSection === link.hash ? 'text-primary' : 'text-foreground/60'
                 )}
               >
+                <link.icon className="h-5 w-5" />
                 <span>{link.name}</span>
                 {activeSection === link.hash && (
                   <motion.div
                     layoutId="active-nav-underline"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}

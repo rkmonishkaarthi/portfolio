@@ -1,6 +1,5 @@
 "use client";
 import { MotionWrapper } from '@/components/motion-wrapper';
-import { skills } from '@/lib/data';
 
 export default function AboutSection() {
   return (
@@ -20,13 +19,6 @@ export default function AboutSection() {
           create efficient, scalable, and user-friendly solutions that solve
           real-world problems. Let's work together to bring your ideas to life!
         </p>
-        <div className="flex flex-wrap gap-3">
-          {skills.map((skill) => (
-            <div key={skill.name} className="bg-secondary text-secondary-foreground font-medium px-4 py-2 rounded-full text-sm">
-              {skill.name}
-            </div>
-          ))}
-        </div>
       </div>
     </MotionWrapper>
   );

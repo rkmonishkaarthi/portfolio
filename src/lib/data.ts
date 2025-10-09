@@ -18,12 +18,17 @@ import {
   Twitter,
   Instagram,
   Download,
+  Send,
+  FileText,
 } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
+  { name: 'Home', hash: '#home', icon: Home },
   { name: 'About', hash: '#about', icon: User },
+  { name: 'Skills', hash: '#skills', icon: Lightbulb },
   { name: 'Projects', hash: '#projects', icon: Briefcase },
-  { name: 'Contact', hash: '#contact', icon: Mail },
+  { name: 'Contact', hash: '#contact', icon: Send },
+  { name: 'Resume', hash: '#resume', icon: FileText },
 ];
 
 export const skills: Skill[] = [
