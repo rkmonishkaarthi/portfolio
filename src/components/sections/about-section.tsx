@@ -1,58 +1,41 @@
+"use client";
 import { MotionWrapper } from '@/components/motion-wrapper';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { skills } from '@/lib/data';
+import Image from 'next/image';
+import Tilt from 'react-parallax-tilt';
 
 export default function AboutSection() {
   return (
     <MotionWrapper id="about">
-      <div className="text-center">
-        <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          About Me
+      <div className="text-left">
+        <p className="text-secondary-foreground/80 sm:text-[18px] text-[14px] uppercase tracking-wider">Introduction</p>
+        <h2 className="font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          Overview.
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-          Here's a little bit about my background, education, and the technologies I work with.
-        </p>
       </div>
-      <div className="mt-12 grid gap-8 md:grid-cols-2">
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-headline">My Journey</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4 text-muted-foreground">
-            <p>
-              Hello! I'm a passionate developer with a knack for creating beautiful and functional websites. My journey into web development started with a simple "Hello World" and has since grown into a full-fledged passion for building complex applications and solving real-world problems.
-            </p>
-            <p>
-              I thrive on learning new technologies and constantly seek to improve my skills to deliver the best possible products.
-            </p>
-          </CardContent>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle className="font-headline">Education</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div>
-              <h3 className="font-semibold">B.Sc. in Computer Science</h3>
-              <p className="text-sm text-muted-foreground">University of Technology | 2018 - 2022</p>
+
+      <p className="mt-4 text-secondary-foreground/70 text-[17px] max-w-3xl leading-[30px]">
+        I'm a skilled software developer with experience in TypeScript and
+        JavaScript, and expertise in frameworks like React, Node.js, and
+        Next.js. I'm a quick learner and collaborate closely with clients to
+        create efficient, scalable, and user-friendly solutions that solve
+        real-world problems. Let's work together to bring your ideas to life!
+      </p>
+
+      <div className="mt-20 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10">
+        {skills.map((skill) => (
+          <Tilt key={skill.name} tiltMaxAngleX={25} tiltMaxAngleY={25} perspective={1000} scale={1.1}>
+            <div className="w-full green-pink-gradient p-[1px] rounded-[20px] shadow-card">
+              <div className="bg-card rounded-[20px] py-5 px-12 min-h-[120px] flex justify-evenly items-center flex-col">
+                <skill.icon className="w-16 h-16 object-contain text-primary" />
+                <h3 className="text-white text-[16px] font-bold text-center">
+                  {skill.name}
+                </h3>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold">Web Development Bootcamp</h3>
-              <p className="text-sm text-muted-foreground">Code Academy | 2021</p>
-            </div>
-          </CardContent>
-        </Card>
-      </div>
-      <div className="mt-12">
-        <h3 className="text-center font-headline text-2xl font-bold">My Skills</h3>
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {skills.map((skill) => (
-            <Card key={skill.name} className="flex flex-col items-center justify-center p-4 hover:bg-accent/50 transition-colors">
-              <skill.icon className="h-10 w-10 text-primary" />
-              <p className="mt-2 text-sm font-medium">{skill.name}</p>
-            </Card>
-          ))}
-        </div>
+          </Tilt>
+        ))}
       </div>
     </MotionWrapper>
   );

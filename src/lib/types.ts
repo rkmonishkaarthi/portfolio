@@ -3,6 +3,7 @@ import type { LucideIcon } from 'lucide-react';
 export type NavLink = {
   name: string;
   hash: string;
+  icon: LucideIcon;
 };
 
 export type Project = {

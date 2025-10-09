@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import type { NavLink } from '@/lib/types';
 
-export function useActiveSection(navLinks: NavLink[], threshold = 0.5) {
+export function useActiveSection(navLinks: NavLink[], threshold = 0.3) {
   const [activeSection, setActiveSection] = useState<string>(navLinks[0]?.hash || '');
 
   useEffect(() => {
@@ -15,7 +15,7 @@ export function useActiveSection(navLinks: NavLink[], threshold = 0.5) {
           }
         });
       },
-      { rootMargin: '-50% 0px -50% 0px', threshold }
+      { rootMargin: '-20% 0px -70% 0px', threshold }
     );
 
     const sections = navLinks.map(({ hash }) => document.querySelector(hash));
