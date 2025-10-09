@@ -13,11 +13,7 @@ export default function AboutSection() {
       </div>
       <div className="md:col-span-2 text-left">
         <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
-          I'm a skilled software developer with experience in TypeScript and
-          JavaScript, and expertise in frameworks like React, Node.js, and
-          Next.js. I'm a quick learner and collaborate closely with clients to
-          create efficient, scalable, and user-friendly solutions that solve
-          real-world problems. Let's work together to bring your ideas to life!
+          I’m a passionate Full Stack Developer 👨‍💻 and CSE student with a strong foundation in Java, MySQL, and MongoDB. I love building efficient and scalable web applications while exploring cloud technologies, networking, and DevOps. A quick learner and problem solver, I’m always eager to work with new tools and frameworks to turn ideas into impactful digital solutions. 🚀
         </p>
       </div>
     </MotionWrapper>
