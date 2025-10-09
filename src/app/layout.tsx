@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Toaster } from '@/components/ui/toaster';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
+import { AnimatedGradientBackground } from '@/components/animated-gradient-background';
 
 export const metadata: Metadata = {
   title: 'PortfolioFlow | Monish Kaarthi R K',
@@ -31,7 +32,8 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="relative z-0 flex min-h-screen flex-col bg-background">
+          <AnimatedGradientBackground />
+          <div className="relative z-0 flex min-h-screen flex-col bg-background/0">
             <Header />
             <main className="container flex-grow px-4 sm:px-6 lg:px-8 py-16">
               {children}

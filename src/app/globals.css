@@ -20,7 +20,7 @@
     @apply scroll-smooth;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-transparent text-foreground;
   }
   * {
     @apply border-border;
@@ -88,5 +88,43 @@
     --border: 217.2 32.6% 17.5%;
     --input: 217.2 32.6% 17.5%;
     --ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer utilities {
+  .light-gradient-bg, .dark-gradient-bg {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .light-gradient-bg::before, .dark-gradient-bg::before {
+    content: '';
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    top: -50%;
+    left: -50%;
+    background-size: 200% 200%;
+    animation: gradient-animation 15s ease infinite;
+  }
+  
+  .light-gradient-bg::before {
+    background-image: radial-gradient(circle at 20% 20%, hsl(217.2 91.2% 59.8% / 0.1), transparent 30%),
+                      radial-gradient(circle at 80% 70%, hsl(217.2 91.2% 59.8% / 0.1), transparent 30%);
+  }
+  
+  .dark-gradient-bg::before {
+     background-image: radial-gradient(circle at 10% 20%, hsl(217, 91%, 59%, 0.2), transparent 40%),
+                      radial-gradient(circle at 80% 70%, hsl(260, 80%, 30%, 0.2), transparent 40%);
+  }
+
+  @keyframes gradient-animation {
+    0% { transform: translate(0%, 0%); }
+    25% { transform: translate(5%, -5%); }
+    50% { transform: translate(0%, 10%); }
+    75% { transform: translate(-5%, -5%); }
+    100% { transform: translate(0%, 0%); }
   }
 }
