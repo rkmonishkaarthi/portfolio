@@ -6,10 +6,10 @@ import dynamic from 'next/dynamic';
 const Typewriter = dynamic(() => import('react-typewriter-effect'), { ssr: false });
 
 const defaultRoles = [
-  "Full Stack Developer",
-  "MERN Stack Developer",
-  "Front-end Developer",
-  "React Developer",
+  "Full Stack Developer 💻",
+  "Cloud Computing Enthusiast ☁️",
+  "DevOps Practitioner 🚀",
+  "Network and Security Explorer 🔐",
 ];
 
 type AnimatedTextProps = {
