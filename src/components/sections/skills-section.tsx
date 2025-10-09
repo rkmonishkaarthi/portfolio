@@ -1,25 +1,20 @@
 import { MotionWrapper } from '@/components/motion-wrapper';
 import { skills } from '@/lib/data';
-import { Badge } from '@/components/ui/badge';
 
 export default function SkillsSection() {
   return (
     <MotionWrapper id="skills">
-      <div className="text-center">
-        <h2 className="font-headline text-3xl font-bold tracking-tight sm:text-4xl">
-          My Skills
+      <div className="text-left">
+        <p className="text-secondary-foreground/80 sm:text-[18px] text-[14px] uppercase tracking-wider">My Tech Stack</p>
+        <h2 className="font-black md:text-[60px] sm:text-[50px] xs:text-[40px] text-[30px]">
+          Technologies.
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          Here are some of the technologies I'm proficient in.
-        </p>
       </div>
-
-      <div className="mt-12 flex flex-wrap justify-center gap-4">
+      <div className="mt-12 flex flex-row flex-wrap justify-center gap-10">
         {skills.map((skill) => (
-          <Badge key={skill.name} variant="secondary" className="text-lg px-4 py-2 flex items-center gap-2">
-            <skill.icon className="h-5 w-5" />
-            <span>{skill.name}</span>
-          </Badge>
+           <div className='w-28 h-28' key={skill.name}>
+            <skill.icon className="w-full h-full object-contain p-2 hover:animate-pulse" />
+          </div>
         ))}
       </div>
     </MotionWrapper>
