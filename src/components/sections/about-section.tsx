@@ -1,35 +1,33 @@
 "use client";
-import Image from "next/image";
 import { MotionWrapper } from '@/components/motion-wrapper';
-import { Button } from "../ui/button";
+import { skills } from '@/lib/data';
 
 export default function AboutSection() {
   return (
-    <MotionWrapper id="about" className="grid md:grid-cols-2 gap-16 items-center">
-      <div className="relative w-full h-80 md:h-96">
-          <Image 
-            src="https://picsum.photos/seed/about/600/600" 
-            alt="About me" 
-            fill
-            className="object-cover rounded-3xl"
-            data-ai-hint="portrait professional"
-          />
-      </div>
-      <div className="text-left">
-        <h2 className="font-bold text-4xl mb-4">
-          About <span className="text-primary">Me</span>
+    <MotionWrapper id="about" className="grid md:grid-cols-3 gap-8 md:gap-16 items-start">
+      <div className="md:col-span-1">
+        <h2 className="text-4xl md:text-5xl font-bold">
+          About
+          <span className="block h-2 w-20 bg-primary mt-2 rounded-full"></span>
         </h2>
-        <h3 className="font-semibold text-2xl mb-4 text-foreground/90">Fullstack Developer!</h3>
-        <p className="text-muted-foreground leading-relaxed mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold mt-2">Me</h2>
+      </div>
+      <div className="md:col-span-2 text-left">
+        <p className="text-muted-foreground leading-relaxed mb-8 text-lg">
           I'm a skilled software developer with experience in TypeScript and
           JavaScript, and expertise in frameworks like React, Node.js, and
           Next.js. I'm a quick learner and collaborate closely with clients to
           create efficient, scalable, and user-friendly solutions that solve
           real-world problems. Let's work together to bring your ideas to life!
         </p>
-        <Button>Read More</Button>
+        <div className="flex flex-wrap gap-3">
+          {skills.map((skill) => (
+            <div key={skill.name} className="bg-secondary text-secondary-foreground font-medium px-4 py-2 rounded-full text-sm">
+              {skill.name}
+            </div>
+          ))}
+        </div>
       </div>
-
     </MotionWrapper>
   );
 }
