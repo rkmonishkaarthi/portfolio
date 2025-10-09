@@ -19,6 +19,7 @@ import {
   Briefcase,
   Twitter,
   Instagram,
+  Download,
 } from 'lucide-react';
 
 export const navLinks: NavLink[] = [
@@ -27,6 +28,7 @@ export const navLinks: NavLink[] = [
   { name: 'Skills', hash: '#skills', icon: Lightbulb },
   { name: 'Projects', hash: '#projects', icon: Briefcase },
   { name: 'Contact', hash: '#contact', icon: Mail },
+  { name: 'Resume', hash: '#resume', icon: Download },
 ];
 
 export const skills: Skill[] = [

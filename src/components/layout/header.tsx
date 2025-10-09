@@ -6,13 +6,12 @@ import { useState, useEffect } from 'react';
 import { navLinks } from '@/lib/data';
 import { cn } from '@/lib/utils';
 import { useActiveSection } from '@/hooks/use-active-section';
-import { ThemeToggle } from '../theme-toggle';
-import { Button } from '../ui/button';
+import { motion } from 'framer-motion';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const activeSection = useActiveSection(navLinks);
+  const activeSection = useActiveSection(navLinks.map(l => l.hash));
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -31,34 +30,35 @@ export function Header() {
   }, []);
 
   return (
-    <header className={cn("sticky top-0 z-50 w-full transition-colors duration-300", isScrolled ? "bg-background/80 backdrop-blur-sm" : "bg-transparent")}>
+    <header className={cn("sticky top-0 z-50 w-full transition-shadow duration-300", isScrolled ? "shadow-md bg-background/80 backdrop-blur-sm" : "shadow-none")}>
       <div className="container flex h-20 items-center justify-between">
         <Link href="/" className="flex items-center space-x-2">
-          <span className="text-3xl font-bold">Soumyajit.</span>
+          <span className="text-3xl font-bold purple-text-gradient">Soumyajit.</span>
         </Link>
         <div className="flex items-center gap-4">
-          <nav className="hidden md:flex md:items-center md:space-x-8 text-lg">
+          <nav className="hidden md:flex md:items-center md:space-x-6 text-lg">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.hash}
                 className={cn(
-                  'font-medium transition-colors hover:text-primary',
-                  activeSection === link.hash ? 'text-primary' : ''
+                  'relative flex items-center gap-2 font-medium transition-colors hover:text-primary',
+                  activeSection === link.hash ? 'text-primary' : 'text-foreground/60'
                 )}
               >
-                {link.name}
+                <link.icon className="h-5 w-5" />
+                <span>{link.name}</span>
+                {activeSection === link.hash && (
+                  <motion.div
+                    layoutId="active-nav-underline"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-primary"
+                  />
+                )}
               </Link>
             ))}
           </nav>
-          <div className="hidden md:flex items-center gap-2">
-            <Button asChild>
-              <Link href="#contact">Hire me</Link>
-            </Button>
-            <ThemeToggle />
-          </div>
+          
           <div className="md:hidden">
-            <ThemeToggle />
             <button
               className="p-2"
               onClick={toggleMenu}
@@ -78,16 +78,14 @@ export function Header() {
                 href={link.hash}
                 onClick={() => setIsOpen(false)}
                 className={cn(
-                  'text-xl font-medium transition-colors hover:text-primary',
+                  'text-xl flex items-center gap-2 font-medium transition-colors hover:text-primary',
                   activeSection === link.hash ? 'text-primary' : ''
                 )}
               >
-                {link.name}
+                 <link.icon className="h-5 w-5" />
+                <span>{link.name}</span>
               </Link>
             ))}
-             <Button asChild>
-              <Link href="#contact">Hire me</Link>
-            </Button>
           </nav>
         </div>
       )}
