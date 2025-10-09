@@ -43,11 +43,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
             <Github className="mr-2"/> GitHub
           </Link>
         </Button>
-        <Button asChild>
-          <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="mr-2"/> Live Demo
-          </Link>
-        </Button>
+        {project.liveUrl && (
+          <Button asChild>
+            <Link href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <ExternalLink className="mr-2"/> Live Demo
+            </Link>
+          </Button>
+        )}
       </div>
     </Card>
   );
