@@ -4,7 +4,7 @@ import Link from 'next/link';
 import type { Project } from '@/lib/types';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
-import { ArrowUpRight, Github } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
 import { Badge } from './ui/badge';
 
 type ProjectCardProps = {
@@ -14,7 +14,7 @@ type ProjectCardProps = {
 
 export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
-    <Card className="flex flex-col overflow-hidden h-full bg-card/80 backdrop-blur-sm border-border/60 p-6 rounded-2xl group relative">
+    <Card className="flex flex-col overflow-hidden h-full bg-card/80 backdrop-blur-sm border-border/60 p-6 rounded-2xl group relative transition-all duration-300 ease-in-out hover:scale-[1.02] hover:-translate-y-2">
       <Link href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="absolute top-6 right-6">
         <Button variant="ghost" size="icon" className="bg-secondary hover:bg-secondary/80 rounded-full h-12 w-12 transform transition-transform duration-300 group-hover:-translate-y-1 group-hover:translate-x-1">
           <ArrowUpRight className="h-6 w-6 text-foreground/80" />
