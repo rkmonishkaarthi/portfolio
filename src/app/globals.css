@@ -21,6 +21,8 @@
   }
   body {
     @apply bg-background text-foreground;
+    background-image: radial-gradient(hsla(0,0%,50%,.3) 1px, transparent 0);
+    background-size: 20px 20px;
   }
   * {
     @apply border-border;
