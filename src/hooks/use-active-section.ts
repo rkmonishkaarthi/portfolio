@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-export function useActiveSection(hashes: string[], threshold = 0.3) {
+export function useActiveSection(hashes: string[], threshold = 0.5) {
   const [activeSection, setActiveSection] = useState<string>(hashes[0] || '');
 
   useEffect(() => {
@@ -14,7 +14,9 @@ export function useActiveSection(hashes: string[], threshold = 0.3) {
           }
         });
       },
-      { rootMargin: '-20% 0px -80% 0px', threshold }
+      // This creates a "tripwire" in the vertical center of the viewport.
+      // A section becomes active when its center crosses the viewport's center.
+      { rootMargin: '-50% 0px -50% 0px', threshold }
     );
 
     const sections = hashes.map((hash) => document.querySelector(hash));
