@@ -14,7 +14,7 @@ export function useActiveSection(hashes: string[], threshold = 0.3) {
           }
         });
       },
-      { rootMargin: '-30% 0px -60% 0px', threshold }
+      { rootMargin: '-20% 0px -70% 0px', threshold }
     );
 
     const sections = hashes.map((hash) => document.querySelector(hash));

@@ -111,13 +111,13 @@
   }
   
   .light-gradient-bg::before {
-    background-image: radial-gradient(circle at 20% 20%, hsl(217.2 91.2% 59.8% / 0.1), transparent 30%),
-                      radial-gradient(circle at 80% 70%, hsl(217.2 91.2% 59.8% / 0.1), transparent 30%);
+    background-image: radial-gradient(circle at 20% 20%, hsl(217.2 91.2% 59.8% / 0.05), transparent 30%),
+                      radial-gradient(circle at 80% 70%, hsl(217.2 91.2% 59.8% / 0.05), transparent 30%);
   }
   
   .dark-gradient-bg::before {
-     background-image: radial-gradient(circle at 10% 20%, hsl(217, 91%, 59%, 0.2), transparent 40%),
-                      radial-gradient(circle at 80% 70%, hsl(260, 80%, 30%, 0.2), transparent 40%);
+     background-image: radial-gradient(circle at 10% 20%, hsl(217, 91%, 59%, 0.15), transparent 40%),
+                      radial-gradient(circle at 80% 70%, hsl(260, 80%, 30%, 0.15), transparent 40%);
   }
 
   @keyframes gradient-animation {
