@@ -28,17 +28,15 @@ export function Header() {
     <header className={cn("sticky top-0 z-50 w-full transition-shadow duration-300", isScrolled ? "shadow-md bg-background/80 backdrop-blur-sm" : "shadow-none")}>
       <div className="container flex h-20 items-center justify-end">
         {/*
-          🛑 FIX 1: Wrap the changing content in a motion.div and apply layoutRoot.
-          This resolves the incorrect position calculation for the layoutId 
-          when the header is sticky and the page is scrolled.
+          🛑 FIX: Add key={activeSection} to force a complete re-render on section change.
+          This resolves the production deployment bug where the layout animation gets stuck.
         */}
-        <motion.div className="flex items-center gap-4" layoutRoot>
+        <motion.div key={activeSection} className="flex items-center gap-4" layoutRoot>
           <nav className="hidden md:flex items-center space-x-6 text-md">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.hash}
-                // FIX 2 (Optional, but clean): Add 'group' for easier Tailwind styling
                 className={cn(
                   'relative flex items-center gap-2 font-medium transition-colors hover:text-primary group', 
                   activeSection === link.hash ? 'text-primary' : 'text-foreground/60'
