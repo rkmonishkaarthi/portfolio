@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from 'react';
 
-export function useActiveSection(hashes: string[], threshold = 0.5) {
+export function useActiveSection(hashes: string[], threshold = 0.2) {
   const [activeSection, setActiveSection] = useState<string>(hashes[0] || '');
   const observerRef = useRef<IntersectionObserver | null>(null);
 
@@ -22,10 +22,8 @@ export function useActiveSection(hashes: string[], threshold = 0.5) {
         });
       },
       {
-        // This threshold means the callback will trigger when 50% of the section is visible
         threshold: threshold,
-        // The rootMargin is adjusted to define the "active" area as the middle of the viewport
-        rootMargin: '-40% 0px -40% 0px'
+        rootMargin: '-20% 0px -70% 0px'
       }
     );
 
